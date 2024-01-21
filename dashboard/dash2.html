@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #dashboard {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: width 0.3s;
+        }
+
+        #content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #navbar {
+            background-color: #222;
+            padding: 10px;
+            color: #fff;
+            text-align: right;
+        }
+
+        #menuBtn {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            #sidebar {
+                width: 0;
+            }
+
+            #menuBtn:checked + #dashboard #sidebar {
+                width: 250px;
+            }
+
+            #menuBtn:checked + #dashboard #content {
+                margin-left: 250px;
+            }
+
+            #menuBtn:checked + #dashboard #navbar {
+                margin-left: 250px;
+            }
+
+            #menuBtn:checked + #dashboard #menuBtnLabel {
+                margin-left: 250px;
+            }
+        }
+
+        /* Additional Styles for Wallet Dashboard */
+        .wallet-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .transaction-history {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .wallet-balance {
+            font-size: 24px;
+            color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+
+<input type="checkbox" id="menuBtn">
+<label for="menuBtn" id="menuBtnLabel">&#9776; Menu</label>
+
+<div id="dashboard">
+    <div id="sidebar">
+        <h2>Sidebar</h2>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <div id="navbar">
+            <p>Welcome, User!</p>
+        </div>
+
+        <div class="wallet-info">
+            <h2>Wallet Information</h2>
+            <p class="wallet-balance">Balance: $500.00</p>
+        </div>
+
+        <div class="transaction-history">
+            <h2>Transaction History</h2>
+            <ul>
+                <li>Transaction 1: -$50.00</li>
+                <li>Transaction 2: +$100.00</li>
+                <li>Transaction 3: -$30.00</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

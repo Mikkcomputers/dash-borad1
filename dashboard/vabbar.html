@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: orange;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+/*  padding: 8px 8px 8px 32px;*/
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  font-family: sans-serif;
+}
+li{
+  list-style: none;
+}
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <ul class="nav nav-primary">
+              
+                <li class="nav-item active">
+              
+                  <a href="/profile/">
+                    <i class="fas fa-home"></i> <p>Dashboard</p>
+                  </a>
+                </li>
+              
+                <li class="nav-item">
+              
+                  <a href="/data_Create/">
+                    <i class="fas fa-signal"></i> <p>Buy Data</p>
+                  </a>
+                </li>
+              
+              
+              
+                    <li class="nav-item">
+                  
+                      <a href="/sme-bulk-data/">
+                        <i class="fas fa-signal"></i> <p>Buy BULK SME Data</p>
+                      </a>
+                    </li>
+                 
+                  
+                    <li class="nav-item">
+                  
+                      <a href="/airtel-cg-bulk-data/">
+                        <i class="fas fa-signal"></i> <p>Buy BULK AIRTEL CG Data</p>
+                      </a>
+                    </li>
+               
+                <li class="nav-item">
+              
+                  <a href="/AirtimeTopupCreate/">
+                    <i class="fas fa-phone-square"></i>
+                    <p>Buy Airtime</p>
+                  </a>
+                </li>
+              
+                <li class="nav-item">
+              
+                <a data-toggle="collapse" href="#utilities">
+                  <i class="fas fa-lightbulb"></i>
+                  <p>Utilities Payment</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="utilities">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="/billpayment/"> <span class="sub-item">Bill Payment</span> </a>
+                    </li>
+                    <li>
+                      <a href="/Cablesub/"> <span class="sub-item">Cable Subscription</span> </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              
+              
+                <li class="nav-item">
+              
+                <a data-toggle="collapse" href="#fund">
+                  <i class="fas fa-credit-card"></i>
+                  <p>Fund Wallet</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="fund">
+                  <ul class="nav nav-collapse">
+                    
+                    <li>
+                      <a href="/payonline/"> <span class="sub-item">Fund with Paystack (ATM)</span> </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li>
+
+                      <a href="/autobank/"> <span class="sub-item">Automated Bank Transfer (N50 charge)</span> </a>
+                    </li>
+                    
+                    <li>
+                      <a href="/Coupon_Payment/"> <span class="sub-item">Fund with coupon</span> </a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </li>
+           
+            </ul>
+</div>
+<div class="contain">
+  
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+   
+</body>
+

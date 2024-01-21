@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #dashboard {
+            display: flex;
+        }
+
+        #sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: width 0.3s;
+        }
+
+        #content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #navbar {
+            background-color: #222;
+            padding: 10px;
+            color: #fff;
+            text-align: right;
+        }
+
+        #menuBtn {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            #sidebar {
+                width: 0;
+            }
+
+            #menuBtn:checked + #dashboard #sidebar {
+                width: 250px;
+            }
+
+            #menuBtn:checked + #dashboard #content {
+                margin-left: 250px;
+            }
+
+            #menuBtn:checked + #dashboard #navbar {
+                margin-left: 250px;
+            }
+
+            #menuBtn:checked + #dashboard #menuBtnLabel {
+                margin-left: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<input type="checkbox" id="menuBtn">
+<label for="menuBtn" id="menuBtnLabel">&#9776; Menu</label>
+
+<div id="dashboard">
+    <div id="sidebar">
+        <h2>Sidebar</h2>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <div id="navbar">
+            <p>Welcome, User!</p>
+        </div>
+        <h2>Main Content</h2>
+        <p>This is a simple responsive dashboard.</p>
+    </div>
+</div>
+
+</body>
+</html>
